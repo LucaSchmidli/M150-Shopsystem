@@ -13,6 +13,7 @@ namespace WhackTech.Models
         public int TotalPrice;
 
         public ApplicationUser ApplicationUser;
+        public ICollection<Item> Items;
         public PaymentMethod PaymentMethod;
     }
 }
