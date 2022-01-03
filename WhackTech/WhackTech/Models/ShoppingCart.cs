@@ -8,10 +8,10 @@ namespace WhackTech.Models
     public class ShoppingCart
     {
         public int ID { get; set; }
-        public int ApplicationUserID { get; set; }
+        public string ApplicationUserID { get; set; }
         public decimal CurrentPrice { get; set; }
 
         public ApplicationUser ApplicationUser { get; set; }
-        public ICollection<Item> Items { get; set; }
+        public List<Item> Items { get; set; }
     }
 }

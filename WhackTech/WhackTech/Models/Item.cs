@@ -7,8 +7,9 @@ namespace WhackTech.Models
 {
     public class Item
     {
-        public int ShoppingCartID { get; set; }
-        public int ProductID { get; set; }
+        public int ID { get; set; }
+       // public int ShoppingCartID { get; set; }
+        //public int ProductID { get; set; }
         public int Quantity { get; set; }
         public decimal Price { get; set; }
 

@@ -7,13 +7,13 @@ namespace WhackTech.Models
 {
     public class Order
     {
-        public int ID;
-        public int ApplicationUserID;
-        public int PaymentMethodID;
-        public int TotalPrice;
+        public int ID { get; set; }
+        //public int ApplicationUserID { get; set; }
+        //public int PaymentMethodID { get; set; }
+        public int TotalPrice { get; set; }
 
-        public ApplicationUser ApplicationUser;
-        public ICollection<Item> Items;
-        public PaymentMethod PaymentMethod;
+        public ApplicationUser ApplicationUser { get; set; }
+        public List<Item> Items { get; set; }
+        public PaymentMethod PaymentMethod { get; set; }
     }
 }
