@@ -8,8 +8,8 @@ namespace WhackTech.Models
     public class Order
     {
         public int ID { get; set; }
-        //public int ApplicationUserID { get; set; }
-        //public int PaymentMethodID { get; set; }
+        public int ApplicationUserID { get; set; }
+        public int PaymentMethodID { get; set; }
         public int TotalPrice { get; set; }
 
         public ApplicationUser ApplicationUser { get; set; }

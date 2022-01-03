@@ -52,9 +52,6 @@ namespace WhackTech.Data
                 .Property(e => e.Canton);
 
             builder.Entity<ApplicationUser>()
-                .Property(e => e.Phone);
-
-            builder.Entity<ApplicationUser>()
                 .HasMany(e => e.Orders).WithOne(o => o.ApplicationUser);
 
             builder.Entity<Order>()
