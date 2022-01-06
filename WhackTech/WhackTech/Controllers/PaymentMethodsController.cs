@@ -18,15 +18,15 @@ namespace WhackTech.Controllers
             _context = context;
         }
 
-        // GET: api/PaymentMethods
-        [HttpGet]
+        // GET: PaymentMethods
+        [HttpGet("PaymentMethods")]
         public async Task<ActionResult<IEnumerable<PaymentMethod>>> GetPaymentMethods()
         {
             return await _context.PaymentMethods.ToListAsync();
         }
 
-        // GET: api/PaymentMethods/5
-        [HttpGet("{id}")]
+        // GET: PaymentMethods/5
+        [HttpGet("PaymentMethods/{id}")]
         public async Task<ActionResult<PaymentMethod>> GetPaymentMethod(int id)
         {
             var paymentMethod = await _context.PaymentMethods.FindAsync(id);
@@ -39,9 +39,9 @@ namespace WhackTech.Controllers
             return paymentMethod;
         }
 
-        // PUT: api/PaymentMethods/5
+        // PUT: PaymentMethods/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("PaymentMethods/{id}")]
         public async Task<IActionResult> UpdatePaymentMethod(int id, PaymentMethod paymentMethod)
         {
             if (id != paymentMethod.ID)
@@ -69,9 +69,9 @@ namespace WhackTech.Controllers
             return NoContent();
         }
 
-        // POST: api/PaymentMethods
+        // POST: PaymentMethods
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("PaymentMethods/")]
         public async Task<ActionResult<PaymentMethod>> CreatePaymentMethod(PaymentMethod paymentMethod)
         {
             _context.PaymentMethods.Add(paymentMethod);
@@ -83,8 +83,8 @@ namespace WhackTech.Controllers
                 paymentMethod);
         }
 
-        // DELETE: api/PaymentMethods/5
-        [HttpDelete("{id}")]
+        // DELETE: PaymentMethods/5
+        [HttpDelete("PaymentMethods/{id}")]
         public async Task<IActionResult> DeletePaymentMethod(int id)
         {
             var paymentMethod = await _context.PaymentMethods.FindAsync(id);

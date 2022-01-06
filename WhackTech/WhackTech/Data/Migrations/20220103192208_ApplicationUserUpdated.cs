@@ -18,13 +18,13 @@ namespace WhackTech.Data.Migrations
                 name: "FK_Orders_PaymentMethods_PaymentMethodID",
                 table: "Orders");
 
-            migrationBuilder.DropColumn(
-                name: "Phone",
-                table: "AspNetUsers");
+            //migrationBuilder.DropColumn(
+            //    name: "Phone",
+            //    table: "AspNetUsers");
 
-            migrationBuilder.DropColumn(
-                name: "ShoppingCartId",
-                table: "AspNetUsers");
+            //migrationBuilder.DropColumn(
+            //    name: "ShoppingCartId",
+            //    table: "AspNetUsers");
 
             migrationBuilder.RenameColumn(
                 name: "imgURL",
@@ -41,12 +41,12 @@ namespace WhackTech.Data.Migrations
                 oldType: "int",
                 oldNullable: true);
 
-            migrationBuilder.AddColumn<int>(
-                name: "ApplicationUserID",
-                table: "Orders",
-                type: "int",
-                nullable: false,
-                defaultValue: 0);
+            //migrationBuilder.AddColumn<int>( //
+            //    name: "ApplicationUserID",
+            //    table: "Orders",
+            //    type: "int",
+            //    nullable: false,
+            //    defaultValue: 0);
 
             migrationBuilder.AlterColumn<int>(
                 name: "ShoppingCartID",
@@ -107,7 +107,7 @@ namespace WhackTech.Data.Migrations
                 name: "FK_Orders_PaymentMethods_PaymentMethodID",
                 table: "Orders");
 
-            migrationBuilder.DropColumn(
+            migrationBuilder.DropColumn( //
                 name: "ApplicationUserID",
                 table: "Orders");
 

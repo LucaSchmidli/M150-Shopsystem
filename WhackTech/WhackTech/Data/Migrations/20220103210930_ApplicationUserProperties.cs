@@ -41,6 +41,7 @@ namespace WhackTech.Data.Migrations
                 table: "AspNetUsers",
                 type: "nvarchar(max)",
                 nullable: true);
+
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

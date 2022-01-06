@@ -1,0 +1,26 @@
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+        <div class="item">
+            <a (click)="filter('')">
+                <img src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
+                <h6>All products</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory">
+          <div class="card col-md-3">
+            <img src="{{item.imgURL}}" alt="">
+            <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.name}}</h5>
+            <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+            <p><strong>Price:</strong> ${{item.price}}</p>
+            <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            <button class="btn btn-primary" routerLink="shop/{{item.id}}">Details</button>
+          </div>
+        </ng-container>
+
+    </div>
+</div>

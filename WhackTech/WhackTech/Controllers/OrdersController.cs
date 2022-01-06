@@ -18,15 +18,15 @@ namespace WhackTech.Controllers
             _context = context;
         }
 
-        // GET: api/Orders
-        [HttpGet]
+        // GET: Orders
+        [HttpGet("Orders")]
         public async Task<ActionResult<IEnumerable<Order>>> GetOrders()
         {
             return await _context.Orders.ToListAsync();
         }
 
-        // GET: api/Orders/5
-        [HttpGet("{id}")]
+        // GET: Orders/5
+        [HttpGet("Orders/{id}")]
         public async Task<ActionResult<Order>> GetOrder(int id)
         {
             var order = await _context.Orders.FindAsync(id);
@@ -39,9 +39,9 @@ namespace WhackTech.Controllers
             return order;
         }
 
-        // PUT: api/Orders/5
+        // PUT: Orders/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("Orders/{id}")]
         public async Task<IActionResult> UpdateOrder(int id, Order order)
         {
             if (id != order.ID)
@@ -55,11 +55,11 @@ namespace WhackTech.Controllers
                 return NotFound();
             }
 
-            foundOrder.ApplicationUserID = order.ApplicationUserID;
+            //foundOrder.ApplicationUserID = order.ApplicationUserID;
             foundOrder.PaymentMethodID = order.PaymentMethodID;
             foundOrder.TotalPrice = order.TotalPrice;
 
-            foundOrder.ApplicationUser = order.ApplicationUser;
+            //foundOrder.ApplicationUser = order.ApplicationUser;
             foundOrder.Items = order.Items;
             foundOrder.PaymentMethod = order.PaymentMethod;
 
@@ -75,10 +75,10 @@ namespace WhackTech.Controllers
             return NoContent();
         }
 
-        // POST: api/Orders
+        // POST: Orders
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Order>> CreateOrder(Order order)
+        [HttpPost("Orders/")]
+        public async Task<ActionResult<Order>> CreateOrder( Order order)
         {
             _context.Orders.Add(order);
             await _context.SaveChangesAsync();
@@ -89,8 +89,8 @@ namespace WhackTech.Controllers
                 order);
         }
 
-        // DELETE: api/Orders/5
-        [HttpDelete("{id}")]
+        // DELETE: Orders/5
+        [HttpDelete("Orders/{id}")]
         public async Task<IActionResult> DeleteOrder(int id)
         {
             var order = await _context.Orders.FindAsync(id);

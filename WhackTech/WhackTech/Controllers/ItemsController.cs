@@ -18,15 +18,15 @@ namespace WhackTech.Controllers
             _context = context;
         }
 
-        // GET: api/Items
-        [HttpGet]
+        // GET: Items
+        [HttpGet("Items")]
         public async Task<ActionResult<IEnumerable<Item>>> GetItems()
         {
             return await _context.Items.ToListAsync();
         }
 
-        // GET: api/Items/5
-        [HttpGet("{id}")]
+        // GET: Items/5
+        [HttpGet("Items/{id}")]
         public async Task<ActionResult<Item>> GetItem(int id)
         {
             var item = await _context.Items.FindAsync(id);
@@ -39,9 +39,9 @@ namespace WhackTech.Controllers
             return item;
         }
 
-        // PUT: api/Items/5
+        // PUT: Items/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("Items/{id}")]
         public async Task<IActionResult> UpdateItem(int id, Item item)
         {
             if (id != item.ID)
@@ -55,12 +55,12 @@ namespace WhackTech.Controllers
                 return NotFound();
             }
 
-            foundItem.ShoppingCartID = item.ShoppingCartID;
+            //foundItem.ShoppingCartID = item.ShoppingCartID;
             foundItem.ProductID = item.ProductID;
             foundItem.Quantity = item.Quantity;
             foundItem.Price = item.Price;
 
-            foundItem.ShoppingCart = item.ShoppingCart;
+            //foundItem.ShoppingCart = item.ShoppingCart;
             foundItem.Product = item.Product;
 
             try
@@ -75,9 +75,9 @@ namespace WhackTech.Controllers
             return NoContent();
         }
 
-        // POST: api/Items
+        // POST: Items
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("Items/")]
         public async Task<ActionResult<Item>> CreateItem(Item item)
         {
             _context.Items.Add(item);
@@ -89,8 +89,8 @@ namespace WhackTech.Controllers
                 item);
         }
 
-        // DELETE: api/Items/5
-        [HttpDelete("{id}")]
+        // DELETE: Items/5
+        [HttpDelete("Items/{id}")]
         public async Task<IActionResult> DeleteItem(int id)
         {
             var item = await _context.Items.FindAsync(id);

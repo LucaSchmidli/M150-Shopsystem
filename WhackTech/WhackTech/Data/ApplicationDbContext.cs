@@ -13,7 +13,6 @@ namespace WhackTech.Data
     public class ApplicationDbContext : ApiAuthorizationDbContext<ApplicationUser>
     {
 
-        public virtual DbSet<ShoppingCart> ShoppingCarts { get; set; }
         public virtual DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Item> Items { get; set; }
@@ -28,10 +27,9 @@ namespace WhackTech.Data
         {
             base.OnModelCreating(builder);
 
-            builder.Entity<ApplicationUser>()
-                .HasOne(a => a.ShoppingCart)
-                .WithOne(b => b.ApplicationUser)
-                .HasForeignKey<ShoppingCart>(b => b.ApplicationUserID);
+            //builder.Entity<ApplicationUser>()
+            //    .HasOne(a => a.ShoppingCart)
+            //    .WithOne(b => b.ApplicationUser);
 
             builder.Entity<ApplicationUser>()
                 .Property(e => e.FirstName);
@@ -51,8 +49,8 @@ namespace WhackTech.Data
             builder.Entity<ApplicationUser>()
                 .Property(e => e.Canton);
 
-            builder.Entity<ApplicationUser>()
-                .HasMany(e => e.Orders).WithOne(o => o.ApplicationUser);
+            //builder.Entity<ApplicationUser>()
+            //    .HasMany(e => e.Orders).WithOne(o => o.ApplicationUser);
 
             builder.Entity<Order>()
                 .HasKey(e => e.ID);

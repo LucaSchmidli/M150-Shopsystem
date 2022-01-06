@@ -1,0 +1,16 @@
+
+<h2>{{product.name}} Details</h2>
+<div class="container">
+    <div class="row">
+        <ng-container>
+            <div class="card col-md-3">
+                <img src="{{product.imgURL}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.name}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{product.description}}</p>
+                <p><strong>Price:</strong> ${{product.price}}</p>
+                <button class="btn btn-primary" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>

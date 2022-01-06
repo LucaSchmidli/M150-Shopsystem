@@ -15,7 +15,7 @@ namespace WhackTech.Models
         public string City { get; set; }
         public string Canton { get; set; }
 
-        public ShoppingCart ShoppingCart { get; set; }
-        public List<Order> Orders { get; set; }
+       // public ShoppingCart ShoppingCart { get; set; }
+        //public List<Order> Orders { get; set; }
     }
 }

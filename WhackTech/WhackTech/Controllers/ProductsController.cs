@@ -18,15 +18,15 @@ namespace WhackTech.Controllers
             _context = context;
         }
 
-        // GET: api/Products
-        [HttpGet]
+        // GET: Products
+        [HttpGet("Products")]
         public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
         {
             return await _context.Products.ToListAsync();
         }
 
-        // GET: api/Products/5
-        [HttpGet("{id}")]
+        // GET: Products/5
+        [HttpGet("Products/{id}")]
         public async Task<ActionResult<Product>> GetProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
@@ -39,9 +39,9 @@ namespace WhackTech.Controllers
             return product;
         }
 
-        // PUT: api/Products/5
+        // PUT: Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
+        [HttpPut("Products/{id}")]
         public async Task<IActionResult> UpdateProduct(int id, Product product)
         {
             if (id != product.ID)
@@ -72,9 +72,9 @@ namespace WhackTech.Controllers
             return NoContent();
         }
 
-        // POST: api/Products
+        // POST: Products
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
+        [HttpPost("Products/")]
         public async Task<ActionResult<Product>> CreateProducts(Product product)
         {
             _context.Products.Add(product);
@@ -86,8 +86,8 @@ namespace WhackTech.Controllers
                 product);
         }
 
-        // DELETE: api/Products/5
-        [HttpDelete("{id}")]
+        // DELETE: Products/5
+        [HttpDelete("Products/{id}")]
         public async Task<IActionResult> DeleteProduct(int id)
         {
             var product = await _context.Products.FindAsync(id);
